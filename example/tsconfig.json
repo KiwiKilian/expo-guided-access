@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "expo-guided-access": ["../src/index"],
+      "expo-guided-access/*": ["../src/*"]
+    }
+  }
+}

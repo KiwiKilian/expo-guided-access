@@ -1,0 +1,48 @@
+{
+  "name": "expo-guided-access",
+  "version": "0.1.0",
+  "description": "Check if device is in guided access mode.",
+  "keywords": [
+    "react-native",
+    "expo",
+    "iOS",
+    "Guided Access"
+  ],
+  "repository": "https://github.com/KiwiKilian/expo-guided-access",
+  "bugs": {
+    "url": "https://github.com/KiwiKilian/expo-guided-access/issues"
+  },
+  "author": {
+    "name": "Kilian Finger",
+    "email": "npm@kilianfinger.com",
+    "url": "https://www.kilianfinger.com/"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/KiwiKilian/expo-guided-access#readme",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "expo-module build",
+    "clean": "expo-module clean",
+    "lint": "expo-module lint",
+    "test": "expo-module test",
+    "prepare": "expo-module prepare",
+    "prepublishOnly": "expo-module prepublishOnly",
+    "expo-module": "expo-module",
+    "open:ios": "open -a \"Xcode\" example/ios",
+    "open:android": "open -a \"Android Studio\" example/android"
+  },
+  "prettier": "@kiwikilian/prettier-config",
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@kiwikilian/prettier-config": "1.0.1",
+    "@types/react": "^18.2.22",
+    "expo-module-scripts": "^3.1.0",
+    "expo-modules-core": "^1.5.11",
+    "prettier": "3.0.3"
+  }
+}
