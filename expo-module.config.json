@@ -1,9 +1,6 @@
 {
-  "platforms": ["ios", "android"],
+  "platforms": ["ios"],
   "ios": {
     "modules": ["ExpoGuidedAccessModule"]
-  },
-  "android": {
-    "modules": ["expo.modules.guidedaccess.ExpoGuidedAccessModule"]
   }
 }
