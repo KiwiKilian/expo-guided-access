@@ -8,7 +8,10 @@
     "iOS",
     "Guided Access"
   ],
-  "repository": "https://github.com/KiwiKilian/expo-guided-access",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiwiKilian/expo-guided-access.git"
+  },
   "bugs": {
     "url": "https://github.com/KiwiKilian/expo-guided-access/issues"
   },
