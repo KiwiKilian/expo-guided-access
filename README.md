@@ -8,7 +8,9 @@ An Expo Module to check if a device is in guided access mode.
 > [!NOTE]  
 > Currently only iOS is supported.
 
-## Installation in Expo Projects with Development Builds
+## Installation
+
+### Installation in Expo Projects with Development Builds
 
 ```
 npm install expo-guided-access
@@ -16,16 +18,57 @@ npm install expo-guided-access
 
 As the module uses custom native code, create a new development build after installation.
 
-## Installation in bare React Native Projects
+### Installation in bare React Native Projects
 
 For bare React Native projects, you must ensure that you have [installed and configured the `expo` package](https://docs.expo.dev/bare/installing-expo-modules/) before continuing.
 
-### Add the Package to your npm dependencies
+#### Add the Package to your npm dependencies
 
 ```
 npm install expo-guided-access
 ```
 
-### Configure for iOS
+#### Configure for iOS
 
 Run `npx pod-install` after installing the npm package.
+
+## Usage
+
+For applied usage see the [example app](example/App.tsx).
+
+### Get Status
+
+```tsx
+const isGuidedAccessEnabled = await ExpoGuidedAccess.isGuidedAccessEnabled();
+```
+
+### Watch
+
+```tsx
+import * as ExpoGuidedAccess from 'expo-guided-access';
+import { Subscription } from 'expo-modules-core';
+import { useEffect, useState } from 'react';
+
+// ...
+
+const [guidedAccessEnabled, setGuidedAccessEnabled] = useState<boolean>();
+const [subscription, setSubscription] = useState<Subscription>();
+
+useEffect(() => {
+  (async () => {
+    const guidedAccessEnabled = await ExpoGuidedAccess.isGuidedAccessEnabled();
+    setGuidedAccessEnabled(guidedAccessEnabled);
+
+    setSubscription(
+      ExpoGuidedAccess.addChangeListener(({ guidedAccessEnabled }) => {
+        setGuidedAccessEnabled(guidedAccessEnabled);
+      }),
+    );
+  })();
+
+  return () => {
+    subscription && subscription.remove();
+    setSubscription(undefined);
+  };
+}, []);
+```

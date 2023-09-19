@@ -1,5 +1,4 @@
 import * as ExpoGuidedAccess from 'expo-guided-access';
-import { addChangeListener, isGuidedAccessEnabled } from 'expo-guided-access';
 import { Subscription } from 'expo-modules-core';
 import { useEffect, useState } from 'react';
 import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -42,11 +41,11 @@ export default function App() {
 
   useEffect(() => {
     (async () => {
-      const guidedAccessEnabled = await isGuidedAccessEnabled();
+      const guidedAccessEnabled = await ExpoGuidedAccess.isGuidedAccessEnabled();
       setGuidedAccessEnabled(guidedAccessEnabled);
 
       setSubscription(
-        addChangeListener(({ guidedAccessEnabled }) => {
+        ExpoGuidedAccess.addChangeListener(({ guidedAccessEnabled }) => {
           setGuidedAccessEnabled(guidedAccessEnabled);
         }),
       );
