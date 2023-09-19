@@ -8,7 +8,7 @@ An Expo Module to check if a device is in guided access mode.
 > [!NOTE]  
 > Currently only iOS is supported.
 
-## Installation in unmanaged Expo projects
+## Installation in Expo Projects with Development Builds
 
 ```
 npm install expo-guided-access
@@ -16,11 +16,11 @@ npm install expo-guided-access
 
 As the module uses custom native code, create a new development build after installation.
 
-## Installation in bare React Native projects
+## Installation in bare React Native Projects
 
 For bare React Native projects, you must ensure that you have [installed and configured the `expo` package](https://docs.expo.dev/bare/installing-expo-modules/) before continuing.
 
-### Add the package to your npm dependencies
+### Add the Package to your npm dependencies
 
 ```
 npm install expo-guided-access
