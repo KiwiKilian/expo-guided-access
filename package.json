@@ -1,7 +1,7 @@
 {
   "name": "expo-guided-access",
   "version": "0.1.0",
-  "description": "Check if device is in guided access mode.",
+  "description": "An Expo Module to check if a device is in guided access mode.",
   "keywords": [
     "react-native",
     "expo",
